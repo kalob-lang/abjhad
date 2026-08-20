@@ -128,8 +128,8 @@ function handleInput() {
     for (let i = 0; i < parts.length; i++) {
         if (parts[i].startsWith('{')) {
             let noun = parts[i].slice(1, -1).toLowerCase(); 
-            if (doTransliterate) parts[i] = '⟨ ' + convertToCypher(noun, pureAbjad, doToolUShortcut) + ' ⟩';
-            else parts[i] = '⟨ ' + parts[i].slice(1, -1) + ' ⟩';
+            if (doTransliterate) parts[i] = '⟨' + convertToCypher(noun, pureAbjad, doToolUShortcut) + '⟩';
+            else parts[i] = '⟨' + parts[i].slice(1, -1) + '⟩';
         } else {
             parts[i] = convertToCypher(parts[i].toLowerCase(), pureAbjad, doToolUShortcut);
         }
