@@ -27,11 +27,11 @@ These characters act as standard consonants and take vowel diacritics exactly li
 
 | Latin | Character |
 | ----- | --------- |
-| **m** | **ʜ**     |
-| **n** | **ƞ**     |
+| **m** | **ƞ**     |
+| **n** | **ʜ**     |
 | **l** | **ꞁ**     |
 | **r** | **ɽ**     |
-| **y** | **y**     |
+| **y** | **ч**     |
 
 ---
 
