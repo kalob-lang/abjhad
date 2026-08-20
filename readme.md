@@ -1,4 +1,4 @@
-# Kalob Abjad
+# Kalob Abjhad
 
 The Kalob Abjhad script is an attempt to create a featural, x-height-restricted abjad. To prevent visual collisions and maintain a dense, uniform horizontal ribbon of text, most base consonants lack ascenders and descenders (the consonants that do not have aspirated versions have descenders). Vowels are represented by combining diacritics placed _above_ the consonants, while the aspirated `+h` modifier is represented by a macron diacritic placed _below_.
 
@@ -64,7 +64,7 @@ Kalob uses the dotless **ı** (mapped to Latin `x`) as its null consonant.
 
 ### Syllable Boundaries & The Dash (`-`)
 
-Because Kalob vowels attach directly to the preceding consonant, words with complex syllable structures (like CVCVCVC) can sometimes cause a vowel to incorrectly attach to a coda consonant rather than acting as the onset of a new syllable. 
+Because Kalob vowels attach directly to the preceding consonant, words with complex syllable structures (like CVCVCVC) can sometimes cause a vowel to incorrectly attach to a coda consonant rather than acting as the onset of a new syllable.
 
 To force a syllable boundary and ensure a vowel separates from a prior consonant, use a hyphen (`-`). This tells the converter to break the sequence, allowing the vowel to attach to a null consonant (`ı`) if necessary, or simply preventing unwanted consonant-vowel combinations.
 
