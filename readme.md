@@ -55,7 +55,7 @@ Kalob operates natively as an **impure** abjad (C[V]). Consonants are inherently
 
 Because vowels must attach to a consonant, any word that begins with a vowel (or any syllable featuring vowel hiatus) requires a structural anchor.
 
-Kalob uses the dotless **ı** (mapped to Latin `x`) as its null consonant.
+Kalob uses the dotless **ı** (mapped to optional Latin `x` which is automatically inserted where needed) as its null consonant.
 
 - **Word-Initial Vowel:** _ag_ → **ı̀ↄ**
 - **Vowel Hiatus:** _phajhua_ → **è̱ɜ̱ı̈ı̀**
