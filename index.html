@@ -184,6 +184,12 @@ svnd-ustem Kalob.</textarea>
             </ul>
           
             <hr>
+
+            <h3>Syllable Boundaries & The Dash (<code>-</code>)</h3>
+            <p>Because Kalob vowels attach directly to the preceding consonant, words with complex syllable structures (like CVCVCVC) can sometimes cause a vowel to incorrectly attach to a coda consonant rather than acting as the onset of a new syllable.</p>
+            <p>To force a syllable boundary and ensure a vowel separates from a prior consonant, use a hyphen (<code>-</code>). This tells the converter to break the sequence, allowing the vowel to attach to a null consonant (<code>ı</code>) if necessary, or simply preventing unwanted consonant-vowel combinations.</p>
+            
+            <hr>
           
             <h3>The "Tool U" Shortcut</h3>
             <p>To reduce diacritic clutter above the x-height for high-frequency grammatical particles, Kalob features a specific punctuation shortcut.</p>
@@ -192,6 +198,11 @@ svnd-ustem Kalob.</textarea>
               <li><strong class="kalob-text">ı̈</strong> → <strong class="kalob-text">:</strong></li>
             </ul>
         </article>
+
+        <footer class="app-footer">
+            <p>Copyright &copy; 2026 Kalob Project</p>
+            <p>Released under the <a href="LICENSE" target="_blank" rel="noopener">Anti-Capitalist Software License (ACSL) v 1.4</a>.</p>
+        </footer>
     </main>
 
     <div id="toast" class="toast">Copied to clipboard!</div>

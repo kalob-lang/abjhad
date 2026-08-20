@@ -62,6 +62,14 @@ Kalob uses the dotless **ı** (mapped to Latin `x`) as its null consonant.
 
 ---
 
+### Syllable Boundaries & The Dash (`-`)
+
+Because Kalob vowels attach directly to the preceding consonant, words with complex syllable structures (like CVCVCVC) can sometimes cause a vowel to incorrectly attach to a coda consonant rather than acting as the onset of a new syllable. 
+
+To force a syllable boundary and ensure a vowel separates from a prior consonant, use a hyphen (`-`). This tells the converter to break the sequence, allowing the vowel to attach to a null consonant (`ı`) if necessary, or simply preventing unwanted consonant-vowel combinations.
+
+---
+
 ### The "Tool U" Shortcut
 
 To reduce diacritic clutter above the x-height for high-frequency grammatical particles, Kalob features a specific punctuation shortcut.
