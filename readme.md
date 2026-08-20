@@ -31,7 +31,7 @@ These characters act as standard consonants and take vowel diacritics exactly li
 | **n** | **ʜ**     |
 | **l** | **ꞁ**     |
 | **r** | **ɽ**     |
-| **y** | **ч**     |
+| **y** | **ɥ**     |
 
 ---
 
