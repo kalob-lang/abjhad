@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalob Abjad Converter</title>
+    <meta name="description" content="A tool to convert Latin text into the Kalob Abjad script and documentation on how the script works.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/gentium-plus" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+    
+    <main class="container">
+        <header class="app-header">
+            <h1>Kalob Abjad</h1>
+            <p>Convert Latin into the featural Kalob script.</p>
+        </header>
+
+        <section class="converter-card glass-panel">
+            <div class="settings-group">
+                <div class="setting-item">
+                    <span class="setting-label">Quotes</span>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="quoteType" id="quoteTypeDoubleAngle" checked>
+                            <span class="radio-custom"></span> 《 》
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="quoteType" id="quoteTypeSquare">
+                            <span class="radio-custom"></span> ｢ ｣
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-item toggle-item">
+                    <label class="toggle-label" for="transliterateNouns">
+                        <span class="label-text">Transliterate Proper Nouns</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="transliterateNouns" checked>
+                            <span class="slider"></span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="setting-item toggle-item">
+                    <label class="toggle-label" for="isPure">
+                        <span class="label-text">Impure (Vowels)</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="isPure" checked>
+                            <span class="slider"></span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="setting-item toggle-item">
+                    <label class="toggle-label" for="toolUShortcut">
+                        <span class="label-text">Tool U Shortcut</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="toolUShortcut" checked>
+                            <span class="slider"></span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <label for="latinIn" class="sr-only">Latin Input</label>
+                <textarea id="latinIn" placeholder="Type Latin text here..." spellcheck="false">ag phajh-ua thwzh. 
+
+sho spa lang-urvd shinej ra ne nido, me khabho ce chvzarjhu khagej ti legz-usheb re kwmo om sorz-ulangu pherdej. 
+
+svnd-ustem Kalob.</textarea>
+            </div>
+
+            <div class="output-area">
+                <div class="output-header">
+                    <span class="output-label">Kalob Output</span>
+                    <button id="copyKalob" class="btn-copy" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        <span class="btn-text">Copy</span>
+                    </button>
+                </div>
+                <div class="hidden" id="kalobOutText"></div>
+                <div id="kalobOut" class="kalob-text"></div>
+            </div>
+        </section>
+
+        <!-- Markdown Documentation -->
+        <article class="documentation">
+            <h1>Kalob Abjad</h1>
+            <p>The Kalob Abjhad script is an attempt to create a featural, x-height-restricted abjad. To prevent visual collisions and maintain a dense, uniform horizontal ribbon of text, most base consonants lack ascenders and descenders (the consonants that do not have aspirated versions have descenders). Vowels are represented by combining diacritics placed <em>above</em> the consonants, while the aspirated <code>+h</code> modifier is represented by a macron diacritic placed <em>below</em>.</p>
+            
+            <h2>Orthography Guide</h2>
+            <h3>The Consonant Skeleton</h3>
+            <p>The script relies on 17 specific Latin Extended and IPA characters. They are grouped phonologically, utilizing crisp geometric shapes for stops and open curves for affricates/fricatives.</p>
+            
+            <h4>Stops & Fricatives</h4>
+            <p>The aspirated (<code>+h</code>) versions of each consonant are formed by adding a combining macron below the base glyph (<code>̱</code>).</p>
+            
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Group</th>
+                    <th>Base (Unvoiced)</th>
+                    <th>+h (Unvoiced)</th>
+                    <th>Voiced</th>
+                    <th>+h (Voiced)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Labials (p, b)</strong></td><td><strong class="kalob-text">e</strong> (p)</td><td><strong class="kalob-text">e̱</strong> (ph)</td><td><strong class="kalob-text">ɘ</strong> (b)</td><td><strong class="kalob-text">ɘ̱</strong> (bh)</td></tr>
+                  <tr><td><strong>Alveolars (t, d)</strong></td><td><strong class="kalob-text">ʌ</strong> (t)</td><td><strong class="kalob-text">ʌ̱</strong> (th)</td><td><strong class="kalob-text">v</strong> (d)</td><td><strong class="kalob-text">v̱</strong> (dh)</td></tr>
+                  <tr><td><strong>Velars (k, g)</strong></td><td><strong class="kalob-text">c</strong> (k)</td><td><strong class="kalob-text">c̱</strong> (kh)</td><td><strong class="kalob-text">ↄ</strong> (g)</td><td><strong class="kalob-text">ↄ̱</strong> (gh)</td></tr>
+                  <tr><td><strong>Uvulars (q)</strong></td><td><strong class="kalob-text">ʊ</strong> (q)</td><td><strong class="kalob-text">ʊ̱</strong> (qh)</td><td>—</td><td>—</td></tr>
+                  <tr><td><strong>Sibilants (s, z)</strong></td><td><strong class="kalob-text">s</strong> (s)</td><td><strong class="kalob-text">s̱</strong> (sh)</td><td><strong class="kalob-text">ƨ</strong> (z)</td><td><strong class="kalob-text">ƨ̱</strong> (zh)</td></tr>
+                  <tr><td><strong>Affricates (c, j)</strong></td><td><strong class="kalob-text">ɛ</strong> (c)</td><td><strong class="kalob-text">ɛ̱</strong> (ch)</td><td><strong class="kalob-text">ɜ</strong> (j)</td><td><strong class="kalob-text">ɜ̱</strong> (jh)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          
+            <h4>Nasals, Liquids, & Glides</h4>
+            <p>These characters act as standard consonants and take vowel diacritics exactly like the stops.</p>
+          
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Latin</th>
+                    <th>Character</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>m</strong></td><td><strong class="kalob-text">ʜ</strong></td></tr>
+                  <tr><td><strong>n</strong></td><td><strong class="kalob-text">ƞ</strong></td></tr>
+                  <tr><td><strong>l</strong></td><td><strong class="kalob-text">ꞁ</strong></td></tr>
+                  <tr><td><strong>r</strong></td><td><strong class="kalob-text">ɽ</strong></td></tr>
+                  <tr><td><strong>y</strong></td><td><strong class="kalob-text">y</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          
+            <hr>
+          
+            <h3>The Vowel System (Diacritics)</h3>
+            <p>Kalob operates natively as an <strong>impure</strong> abjad (C[V]). Consonants are inherently vowelless. To indicate a vowel, a specific combining mark is added directly above the consonant of that syllable.</p>
+          
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Latin</th>
+                    <th>Vowel Diacritic</th>
+                    <th>Example on 'p' (e)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>a</strong></td><td>Grave (<code>◌̀</code>)</td><td><strong class="kalob-text">è</strong></td></tr>
+                  <tr><td><strong>e</strong></td><td>Acute (<code>◌́</code>)</td><td><strong class="kalob-text">é</strong></td></tr>
+                  <tr><td><strong>i</strong></td><td>Circumflex (<code>◌̂</code>)</td><td><strong class="kalob-text">ê</strong></td></tr>
+                  <tr><td><strong>o</strong></td><td>Dot (<code>◌̇</code>)</td><td><strong class="kalob-text">ė</strong></td></tr>
+                  <tr><td><strong>u</strong></td><td>Diaeresis (<code>◌̈</code>)</td><td><strong class="kalob-text">ë</strong></td></tr>
+                  <tr><td><strong>v</strong></td><td>Caron (<code>◌̌</code>)</td><td><strong class="kalob-text">ě</strong></td></tr>
+                  <tr><td><strong>w</strong></td><td>Tilde (<code>◌̃</code>)</td><td><strong class="kalob-text">ẽ</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          
+            <hr>
+          
+            <h3>The Null Consonant & Hiatus (<code>ı</code>)</h3>
+            <p>Because vowels must attach to a consonant, any word that begins with a vowel (or any syllable featuring vowel hiatus) requires a structural anchor.</p>
+            <p>Kalob uses the dotless <strong>ı</strong> (mapped to Latin <code>x</code>) as its null consonant.</p>
+            <ul>
+              <li><strong>Word-Initial Vowel:</strong> <em>ag</em> → <strong class="kalob-text">ı̀ↄ</strong></li>
+              <li><strong>Vowel Hiatus:</strong> <em>phajhua</em> → <strong class="kalob-text">è̱ɜ̱ı̈ı̀</strong></li>
+            </ul>
+          
+            <hr>
+          
+            <h3>The "Tool U" Shortcut</h3>
+            <p>To reduce diacritic clutter above the x-height for high-frequency grammatical particles, Kalob features a specific punctuation shortcut.</p>
+            <p>When the vowel <strong>u</strong> (<code>◌̈</code>) attaches to the null consonant <strong>ı</strong> to form the independent syllable <strong class="kalob-text">ı̈</strong> (representing "Tool U" in the grammar), it can be entirely replaced by a standard colon:</p>
+            <ul>
+              <li><strong class="kalob-text">ı̈</strong> → <strong class="kalob-text">:</strong></li>
+            </ul>
+        </article>
+    </main>
+
+    <div id="toast" class="toast">Copied to clipboard!</div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
