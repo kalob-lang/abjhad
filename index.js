@@ -121,7 +121,7 @@ function handleInput() {
     let text = latinIn.value
         .split('"')
         .reduce((acc, v, i) => acc + (i % 2 ? '[' : ']') + v)
-        .replace(/\b[A-Z][A-Za-z]*/g, '{$&}'); 
+        .replace(/\b[A-Z][A-Za-z]*(?:\s+[A-Z][A-Za-z]*)*\b/g, '{$&}'); 
 
     let parts = text.split(/(\{.*?\})/);
     
