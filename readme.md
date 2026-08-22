@@ -17,7 +17,7 @@ The aspirated (`+h`) versions of each consonant are formed by adding a combining
 | **Labials (p, b)**    | **e** (p)       | **e̱** (ph)    | **ɘ** (b) | **ɘ̱** (bh)  |
 | **Alveolars (t, d)**  | **ʌ** (t)       | **ʌ̱** (th)    | **v** (d) | **v̱** (dh)  |
 | **Velars (k, g)**     | **c** (k)       | **c̱** (kh)    | **ↄ** (g) | **ↄ̱** (gh)  |
-| **Uvulars (q)**       | **ʊ** (q)       | **ʊ̱** (qh)    | —         | —           |
+| **Approximants (q)**  | **ʊ** (q)       | **ʊ̱** (qh)    | —         | —           |
 | **Sibilants (s, z)**  | **s** (s)       | **s̱** (sh)    | **ƨ** (z) | **ƨ̱** (zh)  |
 | **Affricates (c, j)** | **ɛ** (c)       | **ɛ̱** (ch)    | **ɜ** (j) | **ɜ̱** (jh)  |
 
